@@ -2,22 +2,18 @@
 
 [![PACs](https://github.com/efm32-rs/efm32zg-pacs/actions/workflows/pacs.yml/badge.svg)](https://github.com/efm32-rs/efm32zg-pacs/actions/workflows/pacs.yml)
 
-This repository contains Peripheral Access Crates (PACs) for Silabs' EFM32 series of Cortex-M microcontrollers.
-
+This repository contains Peripheral Access Crates (PACs) for Silabs' EFM32ZG series of Cortex-M microcontrollers.
 All these crates are automatically generated using [svd2rust](https://github.com/rust-embedded/svd2rust).
 
 Refer to the [CHANGELOG](CHANGELOG.md) to see what changed in the last releases.
 
 ## Crates
 
-Every EFM32ZG chip has its own PAC, listed below:
+Every EFM32G chip has its own PAC, listed below:
 
-| Crate            | Docs                                                                                   | crates.io                                                                                                   | target               |
-|------------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------|
-| `efm32zg108-pac` | [![docs.rs](https://docs.rs/efm32zg108-pac/badge.svg)](https://docs.rs/efm32zg108-pac) | [![crates.io](https://img.shields.io/crates/d/efm32zg108-pac.svg)](https://crates.io/crates/efm32zg108-pac) | `thumbv6m-none-eabi` |
- | `efm32zg110-pac` | [![docs.rs](https://docs.rs/efm32zg110-pac/badge.svg)](https://docs.rs/efm32zg110-pac) | [![crates.io](https://img.shields.io/crates/d/efm32zg110-pac.svg)](https://crates.io/crates/efm32zg110-pac) | `thumbv6m-none-eabi` |
- | `efm32zg210-pac` | [![docs.rs](https://docs.rs/efm32zg210-pac/badge.svg)](https://docs.rs/efm32zg210-pac) | [![crates.io](https://img.shields.io/crates/d/efm32zg210-pac.svg)](https://crates.io/crates/efm32zg210-pac) | `thumbv6m-none-eabi` |
- | `efm32zg222-pac` | [![docs.rs](https://docs.rs/efm32zg222-pac/badge.svg)](https://docs.rs/efm32zg222-pac) | [![crates.io](https://img.shields.io/crates/d/efm32zg222-pac.svg)](https://crates.io/crates/efm32zg222-pac) | `thumbv6m-none-eabi` |
+| Crate           | Docs                                                                                 | crates.io                                                                                                 | Target               |
+|-----------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------|
+| `efm32zg-pac`| [![docs.rs](https://docs.rs/efm32zg-pac/badge.svg)](https://docs.rs/efm32zg-pac)| [![crates.io](https://img.shields.io/crates/d/efm32zg-pac)](https://crates.io/crates/efm32zg-pac)| `thumbv6m-none-eabi` |
 
 ## Device Reference Manuals from Silabs
 

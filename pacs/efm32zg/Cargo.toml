@@ -1,8 +1,8 @@
 [package]
-name = "efm32zg222-pac"
-description = "Peripheral access API for EFM32ZG222 MCU (generated using svd2rust)"
+name = "efm32zg-pac"
+description = "Peripheral access API for EFM32ZG MCU (generated using svd2rust)"
 homepage = "https://github.com/efm32-rs/efm32zg-pacs"
-version = "0.1.0"
+version = "0.1.1"
 authors = [ "Vladimir Petrigo <vladimir.petrigo@gmail.com>",]
 license = "BSD-3-Clause"
 keywords = [ "no-std", "arm", "cortex-m", "efm32",]
@@ -16,8 +16,18 @@ cortex-m = "~0.7"
 vcell = "~0.1"
 
 [features]
+default = [ "rt",]
 rt = [ "cortex-m-rt/device",]
+efm32zg108 = []
+efm32zg110 = []
+efm32zg210 = []
+efm32zg222 = []
 
 [dependencies.cortex-m-rt]
 version = "~0.7"
 optional = true
+
+[package.metadata.docs.rs]
+features = [ "rt", "efm32zg108", "efm32zg222",]
+default-target = "thumbv6m-none-eabi"
+targets = []
