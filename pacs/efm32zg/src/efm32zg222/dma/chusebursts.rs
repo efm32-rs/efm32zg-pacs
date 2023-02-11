@@ -37,19 +37,19 @@ impl From<crate::W<CHUSEBURSTS_SPEC>> for W {
 #[doc = "Field `CH0USEBURSTS` reader - Channel 0 Useburst Set"]
 pub type CH0USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH0USEBURSTS` writer - Channel 0 Useburst Set"]
-pub type CH0USEBURSTS_W<'a> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, 0>;
+pub type CH0USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH1USEBURSTS` reader - Channel 1 Useburst Set"]
 pub type CH1USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH1USEBURSTS` writer - Channel 1 Useburst Set"]
-pub type CH1USEBURSTS_W<'a> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, 1>;
+pub type CH1USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH2USEBURSTS` reader - Channel 2 Useburst Set"]
 pub type CH2USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH2USEBURSTS` writer - Channel 2 Useburst Set"]
-pub type CH2USEBURSTS_W<'a> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, 2>;
+pub type CH2USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 #[doc = "Field `CH3USEBURSTS` reader - Channel 3 Useburst Set"]
 pub type CH3USEBURSTS_R = crate::BitReader<bool>;
 #[doc = "Field `CH3USEBURSTS` writer - Channel 3 Useburst Set"]
-pub type CH3USEBURSTS_W<'a> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, 3>;
+pub type CH3USEBURSTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHUSEBURSTS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Channel 0 Useburst Set"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel 0 Useburst Set"]
     #[inline(always)]
-    pub fn ch0usebursts(&mut self) -> CH0USEBURSTS_W {
+    #[must_use]
+    pub fn ch0usebursts(&mut self) -> CH0USEBURSTS_W<0> {
         CH0USEBURSTS_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Useburst Set"]
     #[inline(always)]
-    pub fn ch1usebursts(&mut self) -> CH1USEBURSTS_W {
+    #[must_use]
+    pub fn ch1usebursts(&mut self) -> CH1USEBURSTS_W<1> {
         CH1USEBURSTS_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Useburst Set"]
     #[inline(always)]
-    pub fn ch2usebursts(&mut self) -> CH2USEBURSTS_W {
+    #[must_use]
+    pub fn ch2usebursts(&mut self) -> CH2USEBURSTS_W<2> {
         CH2USEBURSTS_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Useburst Set"]
     #[inline(always)]
-    pub fn ch3usebursts(&mut self) -> CH3USEBURSTS_W {
+    #[must_use]
+    pub fn ch3usebursts(&mut self) -> CH3USEBURSTS_W<3> {
         CH3USEBURSTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for CHUSEBURSTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [chusebursts::W](W) writer structure"]
 impl crate::Writable for CHUSEBURSTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHUSEBURSTS to value 0"]
 impl crate::Resettable for CHUSEBURSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

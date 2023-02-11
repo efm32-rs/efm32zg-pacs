@@ -20,32 +20,36 @@ impl From<crate::W<CHENC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0ENC` writer - Channel 0 Enable Clear"]
-pub type CH0ENC_W<'a> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, 0>;
+pub type CH0ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH1ENC` writer - Channel 1 Enable Clear"]
-pub type CH1ENC_W<'a> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, 1>;
+pub type CH1ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH2ENC` writer - Channel 2 Enable Clear"]
-pub type CH2ENC_W<'a> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, 2>;
+pub type CH2ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 #[doc = "Field `CH3ENC` writer - Channel 3 Enable Clear"]
-pub type CH3ENC_W<'a> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, 3>;
+pub type CH3ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Enable Clear"]
     #[inline(always)]
-    pub fn ch0enc(&mut self) -> CH0ENC_W {
+    #[must_use]
+    pub fn ch0enc(&mut self) -> CH0ENC_W<0> {
         CH0ENC_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Enable Clear"]
     #[inline(always)]
-    pub fn ch1enc(&mut self) -> CH1ENC_W {
+    #[must_use]
+    pub fn ch1enc(&mut self) -> CH1ENC_W<1> {
         CH1ENC_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Enable Clear"]
     #[inline(always)]
-    pub fn ch2enc(&mut self) -> CH2ENC_W {
+    #[must_use]
+    pub fn ch2enc(&mut self) -> CH2ENC_W<2> {
         CH2ENC_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Enable Clear"]
     #[inline(always)]
-    pub fn ch3enc(&mut self) -> CH3ENC_W {
+    #[must_use]
+    pub fn ch3enc(&mut self) -> CH3ENC_W<3> {
         CH3ENC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -63,11 +67,10 @@ impl crate::RegisterSpec for CHENC_SPEC {
 #[doc = "`write(|w| ..)` method takes [chenc::W](W) writer structure"]
 impl crate::Writable for CHENC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHENC to value 0"]
 impl crate::Resettable for CHENC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

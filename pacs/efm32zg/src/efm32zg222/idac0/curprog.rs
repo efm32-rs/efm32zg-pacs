@@ -34,8 +34,10 @@ impl From<crate::W<CURPROG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RANGESEL` reader - Current Range Select"]
+pub type RANGESEL_R = crate::FieldReader<u8, RANGESEL_A>;
 #[doc = "Current Range Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RANGESEL_A {
     #[doc = "0: Current range set to 0 - 1.6 uA."]
@@ -53,8 +55,6 @@ impl From<RANGESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RANGESEL` reader - Current Range Select"]
-pub type RANGESEL_R = crate::FieldReader<u8, RANGESEL_A>;
 impl RANGESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl RANGESEL_R {
     }
 }
 #[doc = "Field `RANGESEL` writer - Current Range Select"]
-pub type RANGESEL_W<'a> = crate::FieldWriterSafe<'a, u32, CURPROG_SPEC, u8, RANGESEL_A, 2, 0>;
-impl<'a> RANGESEL_W<'a> {
+pub type RANGESEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CURPROG_SPEC, u8, RANGESEL_A, 2, O>;
+impl<'a, const O: u8> RANGESEL_W<'a, O> {
     #[doc = "Current range set to 0 - 1.6 uA."]
     #[inline(always)]
     pub fn range0(self) -> &'a mut W {
@@ -115,7 +116,7 @@ impl<'a> RANGESEL_W<'a> {
 #[doc = "Field `STEPSEL` reader - Current Step Size Select"]
 pub type STEPSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STEPSEL` writer - Current Step Size Select"]
-pub type STEPSEL_W<'a> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 5, 8>;
+pub type STEPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
@@ -131,12 +132,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
-    pub fn rangesel(&mut self) -> RANGESEL_W {
+    #[must_use]
+    pub fn rangesel(&mut self) -> RANGESEL_W<0> {
         RANGESEL_W::new(self)
     }
     #[doc = "Bits 8:12 - Current Step Size Select"]
     #[inline(always)]
-    pub fn stepsel(&mut self) -> STEPSEL_W {
+    #[must_use]
+    pub fn stepsel(&mut self) -> STEPSEL_W<8> {
         STEPSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -158,11 +161,10 @@ impl crate::Readable for CURPROG_SPEC {
 #[doc = "`write(|w| ..)` method takes [curprog::W](W) writer structure"]
 impl crate::Writable for CURPROG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CURPROG to value 0"]
 impl crate::Resettable for CURPROG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

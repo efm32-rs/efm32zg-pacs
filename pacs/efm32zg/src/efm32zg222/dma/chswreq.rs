@@ -20,32 +20,36 @@ impl From<crate::W<CHSWREQ_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0SWREQ` writer - Channel 0 Software Request"]
-pub type CH0SWREQ_W<'a> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, 0>;
+pub type CH0SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH1SWREQ` writer - Channel 1 Software Request"]
-pub type CH1SWREQ_W<'a> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, 1>;
+pub type CH1SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH2SWREQ` writer - Channel 2 Software Request"]
-pub type CH2SWREQ_W<'a> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, 2>;
+pub type CH2SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 #[doc = "Field `CH3SWREQ` writer - Channel 3 Software Request"]
-pub type CH3SWREQ_W<'a> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, 3>;
+pub type CH3SWREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHSWREQ_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Software Request"]
     #[inline(always)]
-    pub fn ch0swreq(&mut self) -> CH0SWREQ_W {
+    #[must_use]
+    pub fn ch0swreq(&mut self) -> CH0SWREQ_W<0> {
         CH0SWREQ_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Software Request"]
     #[inline(always)]
-    pub fn ch1swreq(&mut self) -> CH1SWREQ_W {
+    #[must_use]
+    pub fn ch1swreq(&mut self) -> CH1SWREQ_W<1> {
         CH1SWREQ_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Software Request"]
     #[inline(always)]
-    pub fn ch2swreq(&mut self) -> CH2SWREQ_W {
+    #[must_use]
+    pub fn ch2swreq(&mut self) -> CH2SWREQ_W<2> {
         CH2SWREQ_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Software Request"]
     #[inline(always)]
-    pub fn ch3swreq(&mut self) -> CH3SWREQ_W {
+    #[must_use]
+    pub fn ch3swreq(&mut self) -> CH3SWREQ_W<3> {
         CH3SWREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -63,11 +67,10 @@ impl crate::RegisterSpec for CHSWREQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [chswreq::W](W) writer structure"]
 impl crate::Writable for CHSWREQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHSWREQ to value 0"]
 impl crate::Resettable for CHSWREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

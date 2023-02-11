@@ -37,11 +37,11 @@ impl From<crate::W<ROUTE_SPEC>> for W {
 #[doc = "Field `SWCLKPEN` reader - Serial Wire Clock Pin Enable"]
 pub type SWCLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWCLKPEN` writer - Serial Wire Clock Pin Enable"]
-pub type SWCLKPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 0>;
+pub type SWCLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `SWDIOPEN` reader - Serial Wire Data Pin Enable"]
 pub type SWDIOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWDIOPEN` writer - Serial Wire Data Pin Enable"]
-pub type SWDIOPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 1>;
+pub type SWDIOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Serial Wire Clock Pin Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Serial Wire Clock Pin Enable"]
     #[inline(always)]
-    pub fn swclkpen(&mut self) -> SWCLKPEN_W {
+    #[must_use]
+    pub fn swclkpen(&mut self) -> SWCLKPEN_W<0> {
         SWCLKPEN_W::new(self)
     }
     #[doc = "Bit 1 - Serial Wire Data Pin Enable"]
     #[inline(always)]
-    pub fn swdiopen(&mut self) -> SWDIOPEN_W {
+    #[must_use]
+    pub fn swdiopen(&mut self) -> SWDIOPEN_W<1> {
         SWDIOPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for ROUTE_SPEC {
 #[doc = "`write(|w| ..)` method takes [route::W](W) writer structure"]
 impl crate::Writable for ROUTE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTE to value 0x03"]
 impl crate::Resettable for ROUTE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03
-    }
+    const RESET_VALUE: Self::Ux = 0x03;
 }

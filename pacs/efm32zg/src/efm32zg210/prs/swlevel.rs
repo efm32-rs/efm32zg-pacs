@@ -37,19 +37,19 @@ impl From<crate::W<SWLEVEL_SPEC>> for W {
 #[doc = "Field `CH0LEVEL` reader - Channel 0 Software Level"]
 pub type CH0LEVEL_R = crate::BitReader<bool>;
 #[doc = "Field `CH0LEVEL` writer - Channel 0 Software Level"]
-pub type CH0LEVEL_W<'a> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, 0>;
+pub type CH0LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, O>;
 #[doc = "Field `CH1LEVEL` reader - Channel 1 Software Level"]
 pub type CH1LEVEL_R = crate::BitReader<bool>;
 #[doc = "Field `CH1LEVEL` writer - Channel 1 Software Level"]
-pub type CH1LEVEL_W<'a> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, 1>;
+pub type CH1LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, O>;
 #[doc = "Field `CH2LEVEL` reader - Channel 2 Software Level"]
 pub type CH2LEVEL_R = crate::BitReader<bool>;
 #[doc = "Field `CH2LEVEL` writer - Channel 2 Software Level"]
-pub type CH2LEVEL_W<'a> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, 2>;
+pub type CH2LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, O>;
 #[doc = "Field `CH3LEVEL` reader - Channel 3 Software Level"]
 pub type CH3LEVEL_R = crate::BitReader<bool>;
 #[doc = "Field `CH3LEVEL` writer - Channel 3 Software Level"]
-pub type CH3LEVEL_W<'a> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, 3>;
+pub type CH3LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWLEVEL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Channel 0 Software Level"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel 0 Software Level"]
     #[inline(always)]
-    pub fn ch0level(&mut self) -> CH0LEVEL_W {
+    #[must_use]
+    pub fn ch0level(&mut self) -> CH0LEVEL_W<0> {
         CH0LEVEL_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Software Level"]
     #[inline(always)]
-    pub fn ch1level(&mut self) -> CH1LEVEL_W {
+    #[must_use]
+    pub fn ch1level(&mut self) -> CH1LEVEL_W<1> {
         CH1LEVEL_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Software Level"]
     #[inline(always)]
-    pub fn ch2level(&mut self) -> CH2LEVEL_W {
+    #[must_use]
+    pub fn ch2level(&mut self) -> CH2LEVEL_W<2> {
         CH2LEVEL_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Software Level"]
     #[inline(always)]
-    pub fn ch3level(&mut self) -> CH3LEVEL_W {
+    #[must_use]
+    pub fn ch3level(&mut self) -> CH3LEVEL_W<3> {
         CH3LEVEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for SWLEVEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [swlevel::W](W) writer structure"]
 impl crate::Writable for SWLEVEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SWLEVEL to value 0"]
 impl crate::Resettable for SWLEVEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
