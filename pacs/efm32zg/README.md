@@ -11,7 +11,7 @@ compile the device(s) you want. To use, in your Cargo.toml:
 
 ```toml
 [dependencies.efm32zg-pac]
-version = "0.1.3"
+version = "0.1.4"
 features = ["efm32zg108"]
 ```
 
